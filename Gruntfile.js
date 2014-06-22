@@ -27,7 +27,8 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['express:dev', 'open', 'watch']);
+  grunt.registerTask('server', ['express:dev', 'open', 'watch']);
+  grunt.registerTask('default', ['server']);
 
   grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-contrib-watch');

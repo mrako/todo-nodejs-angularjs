@@ -13,10 +13,11 @@ This is a simple app built using MongoDB, NodeJS and AngularJS.
 * [Grunt](http://gruntjs.com/)
 * [Bower](http://bower.io/)
 
+
 ## Installation
 
 1. Clone the repository: `git clone git@github.com:mrako/todo-nodejs-angularjs`
 2. Install dependencies: `npm install`
-2. Install components: `npm install`
-3. Start db: `mongod --dbpath db/data`
-3. Start server: `grunt server`
+3. Install components: `bower install`
+4. (skip if you have mongo running as a service) Start db: `mongod --dbpath db/data`
+5. Start server: `grunt server`

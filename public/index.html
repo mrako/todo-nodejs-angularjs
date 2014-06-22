@@ -1,0 +1,42 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Todo App</title>
+
+    <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/components/fontawesome/dist/css/font-awesome.min.css" />
+
+    <link href="/components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body ng-app="todoApp">
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="#">Home</a></li>
+        </ul>
+        <h3 class="text-muted">Todo App</h3>
+      </div>
+
+      <div ng-view></div>
+
+      <div class="footer">
+        <p>&copy; Company 2014</p>
+      </div>
+    </div>
+
+
+    <script src="/js/angular.min.js"></script>
+
+    <script src="/components/angular-xeditable/dist/js/xeditable.js"></script>
+
+    <script src="/js/app.js"></script>
+  </body>
+</html>

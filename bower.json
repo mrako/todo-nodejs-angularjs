@@ -1,0 +1,11 @@
+{
+  "name": "todo-app",
+  "version": "0.0.0",
+  "directory": "public/",
+  "dependencies": {
+    "angular": "latest",
+    "angular-xeditable": "latest",
+    "bootstrap": "latest",
+    "fontawesome": "latest"
+  }
+}

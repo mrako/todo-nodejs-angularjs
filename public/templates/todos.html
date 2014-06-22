@@ -1,0 +1,43 @@
+<div ng-controller="todosController">
+
+    <div class="jumbotron">
+      <h3>You currently have <ng-pluralize count="todos.length" when="{'0': 'no todos', '1': '1 todo', 'other': '{} todos'}" /></h3>
+    </div>
+
+
+    <div class="row text-center">
+      <form ng-submit="save()" class="form-inline" role="form">
+        <div class="form-group">
+            <label class="sr-only" for="text">Todo</label>
+            <input type="text" name="text" ng-model="formData.text" class="form-control" id="text" placeholder="New todo item">
+        </div>
+        <input type="hidden" ng-model="formData._id" />
+        <button type="submit" class="btn btn-info"/>{{ submit }}</button>
+      </form>
+    </div>
+
+    <div class="row marketing">
+      <table class="table table-striped">
+          <thead> 
+              <tr>
+                  <th></th>
+                  <th>Todo</th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr ng-repeat="todo in todos">
+                  <td class="col-md-1">
+                    <input type="checkbox" ng-model="todo.done" ng-click="update(todo)"/>
+                  </td>
+                  <td class="col-md-10">
+                    <a href="#" editable-text="todo.text" onbeforesave="updateData(todo, $data)">{{ todo.text || "empty" }}</a>
+                  </td>
+                  <td class="col-md-1">
+                      <a href="" ng-click="delete(todo._id)">delete</a>
+                  </td>
+              </tr>
+          </tbody>
+      </table>    
+    </div>
+</div>

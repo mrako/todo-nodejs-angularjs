@@ -1,0 +1,27 @@
+{
+  "name"         : "todo-app",
+  "version"      : "0.0.0",
+  "description"  : "a nodejs and angularjs example using api",
+  "homepage"     : "",
+  "author"       : {
+    "name": "",
+    "email": ""
+  },
+  "repository"   : {
+    "type": "git",
+    "url": ""
+  },
+  "main"         : "server.js",
+  "dependencies" : {
+    "express"    : "latest",
+    "body-parser": "latest",
+    "morgan": "latest",
+    "mongoose"   : "latest"
+  },
+  "devDependencies" : {
+    "grunt": "latest",
+    "grunt-express-server": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-open": "latest"
+  }
+}

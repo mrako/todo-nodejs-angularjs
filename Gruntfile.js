@@ -39,14 +39,16 @@ module.exports = function(grunt) {
     },
     karma: {
       unit: {
-        configFile: 'karma.conf.js',
-        singleRun: true
+        configFile: './test/karma.conf.js'
       }
     }
   });
 
   grunt.registerTask('server', ['express:dev', 'open', 'watch']);
   grunt.registerTask('default', ['jshint', 'karma']);
+
+  grunt.registerTask('test:unit', ['karma:unit']);
+  grunt.registerTask('test:e2e', ['karma:e2e']);
 
   grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-contrib-watch');

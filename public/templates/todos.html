@@ -1,4 +1,4 @@
-<div ng-controller="TodosController">
+<div id="todos" ng-controller="TodosController">
 
     <div class="jumbotron">
       <h3>You currently have <ng-pluralize count="todos.length" when="{'0': 'no todos', '1': '1 todo', 'other': '{} todos'}" /></h3>
@@ -9,7 +9,7 @@
       <form ng-submit="save()" class="form-inline" role="form">
         <div class="form-group">
             <label class="sr-only" for="text">Todo</label>
-            <input type="text" name="text" ng-model="formData.text" class="form-control" id="text" placeholder="New todo item">
+            <input type="text" name="text" ng-model="formData.text" class="form-control" placeholder="New todo item">
         </div>
         <input type="hidden" ng-model="formData._id" />
         <button type="submit" class="btn btn-info"/>{{ submit }}</button>

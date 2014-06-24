@@ -1,6 +1,6 @@
 'use strict';
 
-var todoApp = angular.module('todoApp', ['xeditable']);
+var todoApp = angular.module('todoApp', ['ngRoute', 'xeditable']);
 
 todoApp.run(function(editableOptions) {
   editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'

@@ -2,9 +2,13 @@
   "name": "todo-app",
   "version": "0.0.0",
   "dependencies": {
-    "angular": "1.0.8",
+    "angular": "1.2.18",
+    "angular-route": "latest",
     "angular-xeditable": "latest",
     "bootstrap": "latest",
     "fontawesome": "latest"
+  },
+  "devDependencies": {
+    "angular-mocks": "latest"
   }
 }

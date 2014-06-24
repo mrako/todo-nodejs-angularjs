@@ -1,7 +1,7 @@
 'use strict';
 
 // SERVICE FOR API CALLS =======================================================
-angular.module('todoApp').factory('todoService', function ($http) {
+angular.module('todoApp').factory('todosService', function ($http) {
     return {
         list : function() {
             return $http.get('/api/todos');

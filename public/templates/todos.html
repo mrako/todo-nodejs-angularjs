@@ -1,4 +1,4 @@
-<div ng-controller="TodoController">
+<div ng-controller="TodosController">
 
     <div class="jumbotron">
       <h3>You currently have <ng-pluralize count="todos.length" when="{'0': 'no todos', '1': '1 todo', 'other': '{} todos'}" /></h3>
@@ -28,7 +28,7 @@
           <tbody>
               <tr ng-repeat="todo in todos">
                   <td class="col-md-1">
-                    <input type="checkbox" ng-model="todo.done" ng-click="update(todo)"/>
+                    <input type="checkbox" ng-model="todo.done" ng-change="update(todo)"/>
                   </td>
                   <td class="col-md-10">
                     <a href="#" editable-text="todo.text" onbeforesave="updateData(todo, $data)">{{ todo.text || "empty" }}</a>

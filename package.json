@@ -23,6 +23,12 @@
     "grunt-express-server": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-contrib-jshint": "latest",
-    "grunt-open": "latest"
+    "grunt-open": "latest",
+
+    "karma": "latest",
+    "grunt-karma": "latest",
+    "karma-spec-reporter": "latest",
+    "karma-jasmine": "latest",
+    "karma-phantomjs-launcher": "latest"
   }
 }

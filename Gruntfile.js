@@ -22,6 +22,11 @@ module.exports = function(grunt) {
         }
       }
     },
+    open: {
+      server: {
+        url: 'http://localhost:<%= express.options.port %>'
+      }
+    },
     jshint: {
       options: {
         jshintrc: '.jshintrc'
@@ -32,18 +37,21 @@ module.exports = function(grunt) {
         'public/js/**/*.js'
       ]
     },
-    open: {
-      server: {
-        url: 'http://localhost:<%= express.options.port %>'
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js',
+        singleRun: true
       }
     }
   });
 
   grunt.registerTask('server', ['express:dev', 'open', 'watch']);
-  grunt.registerTask('default', ['server']);
+  grunt.registerTask('default', ['jshint', 'karma']);
 
   grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-open');
+
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-karma');
 };

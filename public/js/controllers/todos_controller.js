@@ -1,12 +1,12 @@
 'use strict';
 
-angular.module('todoApp').controller('TodoController', function($scope, $http, todoService) {
+angular.module('todoApp').controller('TodosController', function($scope, $http, todosService) {
     $scope.formData = {};
     $scope.submit = 'Create';
     $scope.loading = true;
 
     // GET =====================================================================
-    todoService.list()
+    todosService.list()
         .success(function(data) {
             $scope.todos = data;
             $scope.loading = false;
@@ -17,12 +17,12 @@ angular.module('todoApp').controller('TodoController', function($scope, $http, t
         $scope.loading = true;
 
         if ($scope.formData._id === undefined) {
-            todoService.create($scope.formData)
+            todosService.create($scope.formData)
                 .success(function(data) {
                     $scope.todos = data;
                 });
         } else {
-            todoService.update($scope.formData._id, $scope.formData)
+            todosService.update($scope.formData._id, $scope.formData)
                 .success(function(data) {
                     $scope.todos = data;
                 });
@@ -35,7 +35,7 @@ angular.module('todoApp').controller('TodoController', function($scope, $http, t
 
     // CREATE ==================================================================
     $scope.edit = function (id) {
-        todoService.get(id)
+        todosService.get(id)
             .success(function(data) {
                 $scope.formData = data;
                 $scope.submit = 'Save';
@@ -51,7 +51,7 @@ angular.module('todoApp').controller('TodoController', function($scope, $http, t
     $scope.updateData = function(todo, data) {
         $scope.loading = true;
 
-        todoService.update(todo._id, {done: todo.done, text: data})
+        todosService.update(todo._id, {done: todo.done, text: data})
             .success(function(data) {
                 $scope.todos = data;
             });
@@ -61,7 +61,7 @@ angular.module('todoApp').controller('TodoController', function($scope, $http, t
     $scope.delete = function(id) {
         $scope.loading = true;
 
-        todoService.delete(id)
+        todosService.delete(id)
             .success(function(data) {
                 $scope.loading = false;
                 $scope.todos = data;

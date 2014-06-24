@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function(grunt) {
   grunt.initConfig({
     express: {
@@ -20,6 +22,16 @@ module.exports = function(grunt) {
         }
       }
     },
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc'
+      },
+      all: [
+        'Gruntfile.js',
+        'app/**/*.js',
+        'public/js/**/*.js'
+      ]
+    },
     open: {
       server: {
         url: 'http://localhost:<%= express.options.port %>'
@@ -32,5 +44,6 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-open');
 };

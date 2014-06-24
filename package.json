@@ -22,6 +22,7 @@
     "grunt": "latest",
     "grunt-express-server": "latest",
     "grunt-contrib-watch": "latest",
+    "grunt-contrib-jshint": "latest",
     "grunt-open": "latest"
   }
 }

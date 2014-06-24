@@ -1,3 +1,5 @@
+'use strict';
+
 var todoApp = angular.module('todoApp', ['TodoController', 'TodoFactory', 'xeditable']);
 
 todoApp.run(function(editableOptions) {

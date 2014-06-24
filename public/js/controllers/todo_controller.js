@@ -1,7 +1,9 @@
+'use strict';
+
 angular.module('TodoController', [])
     .controller('todoController', function($scope, $http, Todo) {
         $scope.formData = {};
-        $scope.submit = "Create";
+        $scope.submit = 'Create';
         $scope.loading = true;
 
         // GET =====================================================================
@@ -15,7 +17,7 @@ angular.module('TodoController', [])
         $scope.save = function() {
             $scope.loading = true;
 
-            if ($scope.formData._id == undefined) {
+            if ($scope.formData._id === undefined) {
                 Todo.create($scope.formData)
                     .success(function(data) {
                         $scope.todos = data;
@@ -29,7 +31,7 @@ angular.module('TodoController', [])
 
             $scope.loading = false;
             $scope.formData = {};
-            $scope.submit = "Create";
+            $scope.submit = 'Create';
         };
 
         // CREATE ==================================================================
@@ -37,14 +39,14 @@ angular.module('TodoController', [])
             Todo.get(id)
                 .success(function(data) {
                     $scope.formData = data;
-                    $scope.submit = "Save";
+                    $scope.submit = 'Save';
                     $scope.loading = false;
                 });
         };
 
         // UPDATE ==================================================================
         $scope.update = function(todo) {
-            $scope.updateData(todo, todo.text)
+            $scope.updateData(todo, todo.text);
         };
 
         $scope.updateData = function(todo, data) {

@@ -1,3 +1,5 @@
+'use strict';
+
 // SERVICE FOR API CALLS =======================================================
 angular.module('TodoFactory', [])
     .factory('Todo', function ($http) {
@@ -17,5 +19,5 @@ angular.module('TodoFactory', [])
             delete : function(id) {
                 return $http.delete('/api/todos/' + id);
             }
-        }
+        };
     });

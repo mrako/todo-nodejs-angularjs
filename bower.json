@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "directory": "public/",
   "dependencies": {
-    "angular": "latest",
+    "angular": "1.0.8",
     "angular-xeditable": "latest",
     "bootstrap": "latest",
     "fontawesome": "latest"
